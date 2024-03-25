@@ -1,3 +1,5 @@
+
+
 var lines = [];
 var reader = require('readline').createInterface({
   input: process.stdin,
@@ -7,12 +9,12 @@ reader.on('line', (line) => {
   lines.push(line);
 });
 reader.on('close', () => {
-  const N = parseInt(lines[0],10);
-    let factorial = 1;
+  const N = parseInt(lines[0], 10);
+     let count = 0;
 
-  for (let i = 1; i <= N; i++) {
-    factorial *= i;
+  for (let i = 5; N / i >= 1; i *= 5) {
+    count += Math.floor(N / i);
   }
-    console.log(factorial); 
-  
+
+  console.log(count);
 });
